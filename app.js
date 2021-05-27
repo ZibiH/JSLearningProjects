@@ -5,7 +5,6 @@ function randomizeColor() {
 	const greenSaturation = Math.floor(Math.random() * 255);
 	const blueSaturation = Math.floor(Math.random() * 255);
 	const randomRgbaColor = `rgba(${redSaturation}, ${greenSaturation}, ${blueSaturation}, 1)`;
-	console.log(randomRgbaColor);
 	return randomRgbaColor;
 }
 
