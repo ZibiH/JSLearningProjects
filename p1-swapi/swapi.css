@@ -31,7 +31,7 @@ ul {
 li {
 	display: inline-block;
 	margin: 0.8rem 1rem;
-	padding: 0.5rem 0.8rem;
+	padding: 0.5rem 1.6rem 1.2rem;
 	width: 30%;
 	min-width: 23rem;
 	border: 1px solid #ffff15;
