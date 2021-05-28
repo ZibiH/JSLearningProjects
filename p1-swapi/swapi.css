@@ -20,15 +20,20 @@ body {
 }
 
 ul {
+	display: flex;
+	flex-wrap: wrap;
 	list-style-type: none;
-	min-width: 23rem;
+	width: 100%;
 	margin: 5rem 0;
+	justify-content: center;
 }
 
 li {
-	margin: 0.8rem 0;
+	display: inline-block;
+	margin: 0.8rem 1rem;
 	padding: 0.5rem 0.8rem;
-	width: 100%;
+	width: 30%;
+	min-width: 23rem;
 	border: 1px solid #ffff15;
 	border-radius: 5px;
 }
