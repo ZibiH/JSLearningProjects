@@ -8,8 +8,8 @@ let url = 'https://swapi.dev/api/people/';
 
 const hover3dEffect = (event) => {
 	const targetedLi = event.target.closest('li');
-	const posX = (targetedLi.clientWidth / 2 - event.offsetX) / 27;
-	const posY = (targetedLi.clientHeight / 2 - event.offsetY) / 9;
+	const posX = (targetedLi.offsetWidth / 2 - event.offsetX) / 30;
+	const posY = (targetedLi.offsetHeight / 2 - event.offsetY) / 26;
 	targetedLi.style.transform = `rotateY(${posX}deg) rotateX(${posY}deg)`;
 };
 
@@ -79,9 +79,7 @@ const collectData = () => {
 			throw new Error(err);
 		});
 
-	fetchMoreBtn.addEventListener('click', () => {
-		setTimeout(collectData, 300);
-	});
+	fetchMoreBtn.addEventListener('click', collectData);
 };
 
 collectData();
