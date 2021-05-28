@@ -1,7 +1,7 @@
 const app = document.getElementById('app');
 const swapiPeopleUl = document.createElement('ul');
 const fetchMoreBtn = document.createElement('button');
-fetchMoreBtn.textContent = 'Fetch more...';
+fetchMoreBtn.textContent = 'show more...';
 app.appendChild(swapiPeopleUl);
 app.appendChild(fetchMoreBtn);
 let url = 'https://swapi.dev/api/people/';
@@ -32,7 +32,7 @@ const createListEl = (person) => {
     <p><span>body mass:</span> ${person.mass}</p>
     <p><span>eye color:</span> ${person.eye_color}</p>
     <p><span>hair color:</span> ${person.hair_color}</p>
-    <p><span>skin color:</span> ${person.skin_color}"</p>
+    <p><span>skin color:</span> ${person.skin_color}</p>
     `;
 	listItem.addEventListener('mousemove', hover3dEffect);
 	listItem.addEventListener('mouseenter', removeTransition);

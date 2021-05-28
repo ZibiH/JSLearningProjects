@@ -32,11 +32,11 @@ ul {
 li {
 	display: inline-block;
 	margin: 0.8rem 1rem;
-	padding: 0.5rem 1.6rem 1.2rem;
+	padding: 0.9rem 1.6rem 1.8rem;
 	width: 30%;
 	min-width: 23rem;
 	max-width: 30rem;
-	box-shadow: 1px 3px 12px rgba(255, 255, 255, 0.25);
+	box-shadow: 1px 3px 12px 3px rgba(255, 255, 21, 0.35);
 	border: 1px solid #ffff15;
 	border-radius: 5px;
 	transform-origin: center;
@@ -59,12 +59,24 @@ li:hover > h2 {
 }
 
 h2 {
+	position: relative;
 	text-transform: uppercase;
 	color: #f0f1f4;
 	text-align: center;
-	margin: 0.5rem 0;
+	margin: 0.5rem 0 1rem;
 	padding-bottom: 0.8rem;
-	border-bottom: 1px solid #f0f1f4;
+}
+h2::after {
+	position: absolute;
+	content: '';
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	border-bottom: 2px solid #ffff15;
+	transform: scale(0);
+	transform-origin: center bottom;
+	transition: transform 0.5s ease;
 }
 
 p {
@@ -118,4 +130,8 @@ button:focus {
 button:hover::after,
 button:focus::after {
 	opacity: 1;
+}
+
+li:hover h2::after {
+	transform: scale(0.75);
 }
