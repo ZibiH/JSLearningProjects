@@ -17,6 +17,7 @@ body {
 	align-items: center;
 	background-color: #09050f;
 	text-align: center;
+	perspective: 1000px;
 }
 
 ul {
@@ -34,8 +35,27 @@ li {
 	padding: 0.5rem 1.6rem 1.2rem;
 	width: 30%;
 	min-width: 23rem;
+	max-width: 30rem;
+	box-shadow: 1px 3px 12px rgba(255, 255, 255, 0.25);
 	border: 1px solid #ffff15;
 	border-radius: 5px;
+	transform-origin: center;
+	transform-style: preserve-3d;
+}
+
+li > * {
+	pointer-events: none;
+	transition: transform 0.5s ease, opacity 0.3s ease;
+	opacity: 0.5;
+}
+
+li:hover > * {
+	transform: translateZ(1.3rem);
+	opacity: 1;
+}
+
+li:hover > h2 {
+	transform: translateZ(1.5rem) scale(1.1);
 }
 
 h2 {
@@ -59,20 +79,6 @@ p span {
 	color: #afabac;
 	font-weight: bold;
 	padding: 0 0.5rem;
-}
-
-a {
-	text-decoration: none;
-	text-transform: uppercase;
-	font-weight: bold;
-	font-size: 0.8rem;
-	color: #51bde4;
-	padding: 0 0.28rem;
-	/* cursor: pointer; */
-}
-
-a:visited {
-	color: #6566ef;
 }
 
 button {

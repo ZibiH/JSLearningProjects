@@ -6,16 +6,37 @@ app.appendChild(swapiPeopleUl);
 app.appendChild(fetchMoreBtn);
 let url = 'https://swapi.dev/api/people/';
 
+const hover3dEffect = (event) => {
+	const targetedLi = event.target.closest('li');
+	const posX = (targetedLi.clientWidth / 2 - event.offsetX) / 27;
+	const posY = (targetedLi.clientHeight / 2 - event.offsetY) / 9;
+	targetedLi.style.transform = `rotateY(${posX}deg) rotateX(${posY}deg)`;
+};
+
+const removeTransition = (event) => {
+	event.target.style.transition = 'none';
+};
+
+const resetCard = (event) => {
+	event.target.style.transition = 'transform 0.5s ease, opacity 0.3s ease';
+	event.target.style.transform = 'rotateX(0deg) rotateY(0deg)';
+};
+
 const createListEl = (person) => {
 	const listItem = document.createElement('li');
 	listItem.innerHTML = `
     <h2>${person.name}</h2>
     <p><span>gender:</span> ${person.gender}</p>
+    <p><span>birth year:</span> ${person.birth_year}</p>
     <p><span>height:</span> ${person.height}</p>
+    <p><span>body mass:</span> ${person.mass}</p>
     <p><span>eye color:</span> ${person.eye_color}</p>
     <p><span>hair color:</span> ${person.hair_color}</p>
-    <p><span>homewolrd:</span><a href="${person.homeworld}" target="_balnk">link</a></p>
+    <p><span>skin color:</span> ${person.skin_color}"</p>
     `;
+	listItem.addEventListener('mousemove', hover3dEffect);
+	listItem.addEventListener('mouseenter', removeTransition);
+	listItem.addEventListener('mouseleave', resetCard);
 	swapiPeopleUl.appendChild(listItem);
 };
 
@@ -58,7 +79,9 @@ const collectData = () => {
 			throw new Error(err);
 		});
 
-	fetchMoreBtn.addEventListener('click', collectData);
+	fetchMoreBtn.addEventListener('click', () => {
+		setTimeout(collectData, 300);
+	});
 };
 
 collectData();
