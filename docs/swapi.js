@@ -62,7 +62,16 @@ const collectData = () => {
 	};
 
 	const fetchMoreData = (url) => {
-		return fetch(url);
+		let newUrl;
+		const urlToCheck = url;
+		if (!urlToCheck.startsWith('https')) {
+			const urlAddress = urlToCheck.split(':')[1];
+			newUrl = `https:${urlAddress}`;
+		} else {
+			newUrl = url;
+		}
+		console.log(newUrl);
+		return fetch(newUrl);
 	};
 
 	const createPeopleList = () => {
