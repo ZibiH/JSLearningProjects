@@ -70,7 +70,6 @@ const collectData = () => {
 		} else {
 			newUrl = url;
 		}
-		console.log(newUrl);
 		return fetch(newUrl);
 	};
 

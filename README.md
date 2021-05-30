@@ -1,10 +1,8 @@
 # This is a public repository of my projects created mainly for JavaScript learning purposes
 
----
+## SWAPI - simple Star Wars searcher
 
-### SWAPI - simple Star Wars searcher
-
-[GitHub Pages:](https://zibih.github.io/JSLearningProjects/)
+[GitHub Pages](https://zibih.github.io/JSLearningProjects/)
 
 ##### Already done:
 
@@ -12,7 +10,7 @@
 - fetching data from swapi.dev/api/ (people)
 - fetching more data with 'show more' button
 
-##### TO DO:
+##### To do:
 
 - options menu (searching: people, planets, vehicles, starships)
 - search input area (to find only one sepecific result)

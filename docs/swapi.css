@@ -31,6 +31,7 @@ ul {
 
 li {
 	display: inline-block;
+	background-color: #09050f;
 	margin: 0.8rem 1rem;
 	padding: 0.9rem 1.6rem 1.8rem;
 	width: 30%;
@@ -41,6 +42,10 @@ li {
 	border-radius: 5px;
 	transform-origin: center;
 	transform-style: preserve-3d;
+}
+
+li:hover {
+	z-index: 10;
 }
 
 li > * {
