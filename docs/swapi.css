@@ -42,6 +42,7 @@ li {
 	border-radius: 5px;
 	transform-origin: center;
 	transform-style: preserve-3d;
+	animation: list-card-shift 600ms ease-in;
 }
 
 li:hover {
@@ -52,6 +53,7 @@ li > * {
 	pointer-events: none;
 	transition: transform 0.5s ease, opacity 0.3s ease;
 	opacity: 0.5;
+	transform-style: preserve-3d;
 }
 
 li:hover > * {
@@ -139,4 +141,13 @@ button:focus::after {
 
 li:hover h2::after {
 	transform: scale(0.75);
+}
+
+@keyframes list-card-shift {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
 }
